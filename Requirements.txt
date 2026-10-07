@@ -1,0 +1,68 @@
+Pizza Sales Analysis Project - Requirements
+
+
+I. Business Context
+
+You are a Data Analyst for a pizza manufacturing and distribution company. Your task is to analyze historical sales data to generate actionable insights that will improve business operations. The dataset provided is highly denormalized and raw.
+
+Provided Files:
+- data_pizza.csv: Raw transactional records for the year 2015.
+- data_dictionary.xlsx: Describes the data fields within the transaction table.
+
+
+II. Project Tasks & Grading Criteria (Maximum Score: 5.0 points)
+
+1. Data Transformation (Power Query) - (0.50 pts)
+The data source is provided as a denormalized flat file. Use Power Query Editor to clean and restructure the data:
+a. Ensure correct data types for all columns.
+b. Transform queries and values as needed.
+c. Normalize the data source into Fact and Dim tables. For Dim tables: keep relevant columns, remove duplicates on the whole table to ensure uniqueness, and create a primary key. For Fact table: merge with Dim tables using left join, expand to map foreign keys, and remove redundant attributes.
+Rule: Import the raw data directly into Power BI without altering the data source beforehand.
+
+2. Data Modeling - (0.25 pts)
+Build a relational data model (star or snowflake schema):
+a. Establish active relationships with proper cardinality and filter direction between dimension and fact tables.
+b. Create a dedicated Date dimension table (via DAX or Power Query) to support time intelligence functions.
+c. Hide unnecessary fields in the Fact table in report view to prevent users from filtering using invalid fields and reduce clutter.
+
+3. Core KPIs & Measures (DAX) - (0.5 pts)
+Create explicit DAX measures and display them using KPI Card visuals:
+a. Total Revenue
+b. Total Quantity Sold
+c. Total Orders
+d. Average Order Value
+e. Average Pizzas per Order
+
+4. Sales Trends and Anomalies - (0.75 pts)
+a. Time Analysis: Analyze and present daily, weekly, and monthly sales trends across 2015.
+b. Day/Time Analysis: Investigate sales performance by day of the week and hour of the day based on Total Orders.
+c. Anomaly Detection: Highlight and investigate the potential causes behind significant sales spikes or drops on notable dates.
+
+5. Product & Size Analysis - (0.75 pts)
+a. Rankings: Rank pizza categories by Total Quantity Sold and Total Revenue.
+b. Top/Bottom Performers: Identify the top 5 and bottom 5 specific pizzas by name based on both Total Quantity Sold and Total Revenue.
+c. Size Distribution: Analyze the relationship between pizza size and Total Quantity Sold within each pizza category. Ensure pizza sizes are sorted in their proper logical order (S, M, L, XL, XXL).
+
+6. Ingredient & Correlation Analysis - (0.5 pts)
+a. Ingredient Popularity: Identify the most and least popular individual ingredients (hint: splitting comma-separated strings will be required) for each pizza category based on Total Quantity Sold.
+b. Price vs. Volume: Explore the correlation between average pizza prices and Total Quantity Sold across categories.
+
+7. Order Frequency & Timing - (0.5 pts)
+a. Order Size Habit: Analyze the frequency of single-item orders versus multi-item orders.
+b. Turnaround Time: Compute and display the average time interval (in minutes) between consecutive orders sorted chronologically.
+
+8. Visual Presentation & UI/UX Design - (0.75 pts)
+a. Ensure clean layout, professional dashboard formatting, and cohesive color themes.
+b. Use appropriate unit formatting and rounding across all visuals.
+c. Use intuitive slicers, include clear page navigation, descriptive chart titles, and clean tooltips.
+
+9. Documentation of Analyses, Insights & Recommendations - (0.5 pts)
+Document the analysis logic, business insights, and actionable recommendations.
+
+---
+
+III. Deliverables
+
+Submit the following:
+1. A single .pbix file containing the fully modeled data, DAX measures, and interactive dashboard visuals.
+2. Documentation of business findings and recommendations either within the dashboard (using text boxes/dedicated pages) or as a separate PDF file.
